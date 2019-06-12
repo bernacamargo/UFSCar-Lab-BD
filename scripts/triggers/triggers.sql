@@ -1,0 +1,10 @@
+-- TRIGGERS TO EXECUTE PROC 3
+CREATE OR REPLACE TRIGGER check_update_empresas
+AFTER UPDATE OR INSERT OR DELETE ON empresas
+EXECUTE PROCEDURE updateViewEmpresasAtividade();
+END
+
+CREATE OR REPLACE TRIGGER check_update_filiais
+AFTER UPDATE OR INSERT OR DELETE ON filiais
+EXECUTE PROCEDURE updateViewEmpresasAtividade();
+END
